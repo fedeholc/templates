@@ -1,6 +1,6 @@
 import { createServer } from "http";
 function requestHandler(req, res) {
-  console.log("In comes a request to: ", req.url);
+  console.log("In comes a request to: ", req.url, req);
 
   if (req.url === "/") {
     res.end("Welcome to the homepage!");
