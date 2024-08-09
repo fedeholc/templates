@@ -1,6 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+ 
 import "./App.css";
 
 function App() {
@@ -56,29 +55,34 @@ function App() {
     <>
       <h1>Vite + React</h1>
       <form id="loginForm" onSubmit={handleSubmit}>
-        <label htmlFor="inputName">Name:</label>
-        <input
-          type="text"
-          id="inputName"
-          name="name"
-          placeholder="Name"
-          required
-          onChange={(e) => handleChange(e)}
-        />
-        <label htmlFor="inputPassword">Password:</label>
-        <input
-          type="password"
-          id="inputPassword"
-          name="password"
-          placeholder="Password"
-          required
-          onChange={(e) => handleChange(e)}
-        />
+        <div id="formName">
+          <label htmlFor="inputName">Name:</label>
+          <input
+            type="text"
+            id="inputName"
+            name="name"
+            placeholder="Name"
+            required
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+        <div id="formPassword">
+          
+          <label htmlFor="inputPassword">Password:</label>
+          <input
+            type="password"
+            id="inputPassword"
+            name="password"
+            placeholder="Password"
+            required
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
         <button id="btnSend" type="submit">
           Send
         </button>
         <div id="message" className={`message ${messageClass}`}>
-          {message}
+          status: {message}
         </div>
       </form>
     </>

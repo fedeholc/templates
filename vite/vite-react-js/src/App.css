@@ -1,49 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
+  /* margin: 0 auto; */
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 
 
 .message {
@@ -57,4 +20,55 @@
 
 .success {
   color: green;
+}
+
+#root {
+  container-name: gridContainer;
+  container-type: inline-size;
+}
+
+#formName {
+  grid-area: formName;
+}
+
+#formPassword {
+  grid-area: formPassword;
+
+}
+
+#btnSend {
+  grid-area: btnSend;
+  width: fit-content;
+
+  justify-self: flex-end;
+}
+
+#message {
+  grid-area: message;
+}
+
+#loginForm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "formName formPassword"
+    ". btnSend"
+    "message message";
+  gap: 1rem;
+}
+
+@container gridContainer (width < 500px) {
+  #loginForm {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "formName"
+      "formPassword"
+      "btnSend"
+      "message";
+    gap: 1rem;
+  }
+
 }
