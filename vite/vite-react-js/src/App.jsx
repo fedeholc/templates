@@ -1,11 +1,13 @@
-import { useState } from "react";
- 
+import { createContext, useContext, useState } from "react";
+
 import "./App.css";
+const MyContext = createContext(0);
 
 function App() {
   const [formValues, setFormValues] = useState();
   const [message, setMessage] = useState("");
   const [messageClass, setMessageClass] = useState("");
+
 
   function handleChange(e) {
     setFormValues((prev) => {
@@ -54,38 +56,47 @@ function App() {
   return (
     <>
       <h1>Vite + React</h1>
-      <form id="loginForm" onSubmit={handleSubmit}>
-        <div id="formName">
-          <label htmlFor="inputName">Name:</label>
-          <input
-            type="text"
-            id="inputName"
-            name="name"
-            placeholder="Name"
-            required
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div id="formPassword">
-          
-          <label htmlFor="inputPassword">Password:</label>
-          <input
-            type="password"
-            id="inputPassword"
-            name="password"
-            placeholder="Password"
-            required
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <button id="btnSend" type="submit">
-          Send
-        </button>
-        <div id="message" className={`message ${messageClass}`}>
-          status: {message}
-        </div>
-      </form>
+      <MyContext.Provider value={messageClass}>
+        <form id="loginForm" onSubmit={handleSubmit}>
+          <div id="formName">
+            <label htmlFor="inputName">Name:</label>
+            <input
+              type="text"
+              id="inputName"
+              name="name"
+              placeholder="Name"
+              required
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <div id="formPassword">
+            <label htmlFor="inputPassword">Password:</label>
+            <input
+              type="password"
+              id="inputPassword"
+              name="password"
+              placeholder="Password"
+              required
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <button id="btnSend" type="submit">
+            Send
+          </button>
+          <Message message={message}/>
+        </form>
+      </MyContext.Provider>
     </>
+  );
+}
+
+// eslint-disable-next-line react/prop-types
+function Message({message}) {
+  let messageClass = useContext(MyContext);
+  return (
+    <div id="message" className={`message ${messageClass}`}>
+      status: {message}
+    </div>
   );
 }
 
