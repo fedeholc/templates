@@ -1,0 +1,66 @@
+/* Preferencia de esquema de color */
+@media (prefers-color-scheme: dark) {
+
+  /* Estilos para modo oscuro */
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  /* Estilos para modo claro */
+  body {
+    background-color: #fff;
+    color: #333;
+  }
+}
+
+/* Preferencia de contraste */
+@media (prefers-contrast: high) {
+
+  /* Estilos para alto contraste */
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+@media (prefers-contrast: low) {
+
+  /* Estilos para bajo contraste */
+  body {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+}
+
+/* Preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Reducir o eliminar animaciones */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Preferencia de datos reducidos */
+@media (prefers-reduced-data: reduce) {
+
+  /* Reducir el uso de datos, por ejemplo, cargar imágenes de menor calidad */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Preferencia de transparencia */
+@media (prefers-reduced-transparency: reduce) {
+
+  /* Reducir o eliminar transparencias */
+  .transparent-element {
+    opacity: 1 !important;
+  }
+}

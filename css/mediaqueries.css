@@ -1,0 +1,111 @@
+/* Estilos base (móvil primero) */
+body {
+  font-size: 16px;
+}
+
+/* Dispositivos extra pequeños (teléfonos, 600px y menos) */
+@media only screen and (max-width: 600px) {
+  /* Estilos aquí */
+}
+
+/* Dispositivos pequeños (tablets retrato y teléfonos grandes, 600px y más) */
+@media only screen and (min-width: 600px) {
+  /* Estilos aquí */
+}
+
+/* Dispositivos medianos (tablets paisaje, 768px y más) */
+@media only screen and (min-width: 768px) {
+  /* Estilos aquí */
+}
+
+/* Dispositivos grandes (laptops/desktops, 992px y más) */
+@media only screen and (min-width: 992px) {
+  /* Estilos aquí */
+}
+
+/* Dispositivos extra grandes (desktops grandes, 1200px y más) */
+@media only screen and (min-width: 1200px) {
+  /* Estilos aquí */
+}
+
+/* Para retina y pantallas de alta resolución */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  /* Estilos para pantallas de alta resolución aquí */
+}
+
+/* Orientación: Paisaje */
+@media screen and (orientation: landscape) {
+  /* Estilos para orientación paisaje aquí */
+}
+
+/* Orientación: Retrato */
+@media screen and (orientation: portrait) {
+  /* Estilos para orientación retrato aquí */
+}
+
+/* Impresión */
+@media print {
+  /* Estilos para impresión aquí */
+}
+
+
+/* Dispositivos con puntero fino (generalmente mouse) */
+@media (pointer: fine) {
+
+  /* Estilos para dispositivos con mouse */
+  .button:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+/* Dispositivos con puntero grueso (generalmente touch) */
+@media (pointer: coarse) {
+
+  /* Estilos para dispositivos táctiles */
+  .button {
+    padding: 12px 20px;
+    /* Botones más grandes para facilitar el toque */
+  }
+}
+
+/* Dispositivos sin puntero */
+@media (pointer: none) {
+  /* Estilos para dispositivos sin puntero (por ejemplo, TV con control remoto) */
+}
+
+/* Para dispositivos con hover */
+@media (hover: hover) {
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  .tooltip-trigger:hover .tooltip {
+    display: block;
+  }
+}
+
+/* Para dispositivos sin hover */
+@media (hover: none) {
+  .button {
+    padding: 15px 20px;
+    /* Botón más grande para tocar fácilmente */
+  }
+
+  .tooltip {
+    display: none;
+  }
+
+  .tooltip-trigger:active .tooltip {
+    display: block;
+  }
+
+  .info-icon {
+    display: inline-block;
+    /* Mostrar un icono de información */
+  }
+}
