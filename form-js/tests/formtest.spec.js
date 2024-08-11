@@ -7,7 +7,7 @@ test("test", async ({ page }) => {
   // await page.getByPlaceholder("Password").click();
   await page.getByPlaceholder("Password").fill("fede");
   //await page.getByRole("button", { name: "Send" }).click();
-  await page.getByText("Send").click();
+  await page.getByText("Send").click({ force: true }); // sin el force no funciona en webkit
   await page.waitForTimeout(1000);
 
   await expect(page.getByText("An error")).toBeVisible();
