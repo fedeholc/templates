@@ -66,6 +66,32 @@
       <div id="message" class="message"></div>
 
     </form>
+  <form id="miFormulario">
+  <input type="text" id="nombre" required>
+  <input type="email" id="email" required>
+  <button type="submit">Enviar</button>
+</form>
+<script>
+  document.getElementById('miFormulario').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    var nombreInput = document.getElementById('nombre');
+    var emailInput = document.getElementById('email');
+
+    if (nombreInput.checkValidity() && emailInput.checkValidity()) {
+      console.log('Formulario válido. Enviando...');
+      // Aquí iría el código para enviar el formulario
+    } else {
+      if (!nombreInput.checkValidity()) {
+        console.log('El nombre no es válido');
+      }
+      if (!emailInput.checkValidity()) {
+        console.log('El email no es válido');
+      }
+    }
+  });
+</script>
+
   </section>
 </body>
 
