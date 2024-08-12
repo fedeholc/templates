@@ -1,0 +1,13 @@
+git clone https://github.com/fedeholc/screensaver.git
+git clone https://github.com/fedeholc/image-downloader.git
+git clone https://github.com/fedeholc/fotoyop.git
+git clone https://github.com/fedeholc/portfolio.fedeholc.ar.git
+git clone https://github.com/fedeholc/foto-v.git
+git clone https://github.com/fedeholc/NuncaSupeProgramar.git
+git clone https://github.com/fedeholc/anota-front-react.git
+git clone https://github.com/fedeholc/anota-back-next.git
+git clone https://github.com/fedeholc/anota-highlighter.git
+git clone https://github.com/fedeholc/anota-back-express.git
+git clone https://github.com/fedeholc/btcd.fedeholc.ar.git
+git clone https://github.com/fedeholc/MyTvShows.git
+git clone https://github.com/fedeholc/pronostico-del-tiempo.git
